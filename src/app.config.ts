@@ -1,7 +1,8 @@
 export default defineAppConfig({
   pages: [
+    'pages/unit/unit',
     'pages/demo/demo',
-    'pages/index/index'
+    'pages/index/index',
   ],
   window: {
     // 下拉刷新时候的样式
