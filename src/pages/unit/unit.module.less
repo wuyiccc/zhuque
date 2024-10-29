@@ -19,3 +19,12 @@
 :global(.title) {
   color: orange;
 }
+
+.bgImg {
+  height: 200px;
+  border: 1px solid red;
+  // h5和小程序都兼容相对路径, 小程序不支持绝对路径
+  background-image: url("../../asset/image/cx1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -30,6 +30,8 @@ function Unit() {
       <View>
         <Text className='title'>在局部样式中编写的全局样式</Text>
       </View>
+
+      <View className={styles.bgImg}></View>
     </View>
   )
 }
