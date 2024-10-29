@@ -32,6 +32,11 @@ function Unit() {
       </View>
 
       <View className={styles.bgImg}></View>
+
+      <View>
+        <Text className='text iconfont icon-mingpian'></Text>
+        <Text className='text iconfont icon-weishoucang'></Text>
+      </View>
     </View>
   )
 }
