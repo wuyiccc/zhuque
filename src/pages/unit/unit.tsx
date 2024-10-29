@@ -1,9 +1,13 @@
 import Taro from "@tarojs/taro";
+import {useEffect} from "react";
 import {Text, View} from '@tarojs/components'
 import styles from './unit.module.less'
 
 function Unit() {
 
+  useEffect(() => {
+    console.log(styles)
+  }, []);
 
   const lineStyle = {
     // 转为小程序单位还是px, 单身等价于 rpx, 值会变
@@ -21,6 +25,10 @@ function Unit() {
       </View>
       <View>
         <Text style={lineStyle}>行内样式</Text>
+      </View>
+
+      <View>
+        <Text className='title'>在局部样式中编写的全局样式</Text>
       </View>
     </View>
   )
