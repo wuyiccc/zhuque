@@ -42,6 +42,19 @@ export default function Home() {
     })
   }
 
+  const goToDetail05 = () => {
+
+    Taro.navigateTo({
+      url: PageConstants.getNavigateUrl(PageConstants.PAGE_DETAIL),
+      events: {
+        acceptDataFromDetailPage: function (data) {
+          console.log(data)
+        }
+      }
+    })
+  }
+
+
   return (
     <View className='home'>
       <View>1. 页面跳转(组件)</View>
@@ -68,9 +81,11 @@ export default function Home() {
       <View>6. 页面切换API(组件)</View>
       <Button onClick={goToSwitch03}>goToSwitch03</Button>
 
-      <View>7. 页面事件发送</View>
-      <Button onClick={goToDetail04}>页面事件发送</Button>
+      <View>7. 页面数据传参(正向)</View>
+      <Button onClick={goToDetail04}>正向页面数据传参(正向)</Button>
 
+      <View>8. 页面数据传参(逆向)</View>
+      <Button onClick={goToDetail05}>逆向页面数据传参(逆向)</Button>
     </View>
   )
 }
