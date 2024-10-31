@@ -29,10 +29,24 @@ export default function Detail() {
     })
   }
 
+
+  const goBack2 = () => {
+
+    Taro.navigateBack({
+      delta: 1
+    })
+
+    Taro.eventCenter.trigger('acceptDataFromEventCenter', {
+      data: '事件总线数据回传'
+    })
+  }
+
+
   return (
     <View className='detail'>
       <Text>Hello world!</Text>
       <Button onClick={goBack}>go Back</Button>
+      <Button onClick={goBack2}>事件总线消息发送</Button>
     </View>
   )
 }

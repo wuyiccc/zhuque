@@ -1,12 +1,20 @@
 import {Button, Navigator, View} from '@tarojs/components'
 import PageConstants from "@/infrastructure/constants/PageConstants";
-import Taro, {useLoad} from '@tarojs/taro'
+import Taro, {useLoad, useUnload} from '@tarojs/taro'
 import './index.less'
 
 export default function Home() {
 
   useLoad(() => {
-    console.log('Page loaded.')
+
+    Taro.eventCenter.on('acceptDataFromEventCenter', (data) => {
+      console.log(data)
+    })
+  })
+
+  useUnload(() => {
+
+    Taro.eventCenter.off('acceptDataFromEventCenter');
   })
 
   const goToDetail01 = () => {
