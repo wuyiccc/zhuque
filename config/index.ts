@@ -25,6 +25,7 @@ export default defineConfig(async (merge, {}) => {
     alias: {
       // index.ts所在目录的上一个文件夹的src
       '@': path.resolve(__dirname, '..', 'src'),
+      '@/component': path.resolve(__dirname, '..', 'src/component')
     },
     copy: {
       patterns: [
