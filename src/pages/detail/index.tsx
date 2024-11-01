@@ -1,10 +1,30 @@
 import {Button, Text, View} from '@tarojs/components'
-import Taro, {useLoad} from '@tarojs/taro'
-import './index.less'
+import {useEffect} from "react";
+import Taro, {
+  useDidHide,
+  useDidShow,
+  useLoad,
+  usePullDownRefresh,
+  useReachBottom,
+  useReady,
+  useUnload
+} from '@tarojs/taro'
+import styles from './index.module.less'
 
 export default function Detail() {
 
+  useEffect(() => {
+    console.log('detail useEffect')
+
+    return () => {
+      console.log('detail useEffect unload/unMount')
+    }
+
+  }, []);
+
   useLoad((options) => {
+
+    console.log('detail useLoad')
 
     console.log('Detail01=', options)
     let currentPages = Taro.getCurrentPages();
@@ -12,6 +32,44 @@ export default function Detail() {
     eventChannel.on('acceptDataFromHomePage', function (data) {
       console.log(data)
     })
+  })
+
+
+
+  useDidShow(() => {
+
+    console.log('detail useDidShow')
+  })
+
+  useReady(() => {
+
+    console.log('detail useReady')
+  })
+
+  useDidHide(() => {
+
+    console.log('detail useDidHide')
+  })
+
+  useUnload(() => {
+
+    console.log('detail useUnload')
+  })
+
+
+  usePullDownRefresh(() => {
+
+    console.log('detail usePullDownRefresh')
+
+    // 1s 之后停止当前页面的下拉刷新功能
+    setTimeout(() => {
+      Taro.stopPullDownRefresh();
+    }, 1000)
+  })
+
+  useReachBottom(() => {
+
+    console.log('detail useReachBottom')
   })
 
 
@@ -47,6 +105,8 @@ export default function Detail() {
       <Text>Hello world!</Text>
       <Button onClick={goBack}>go Back</Button>
       <Button onClick={goBack2}>事件总线消息发送</Button>
+      <View className={styles.detailItem}>item1</View>
+      <View className={styles.detailItem}>item2</View>
     </View>
   )
 }
