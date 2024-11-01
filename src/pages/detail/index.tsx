@@ -1,5 +1,5 @@
 import {Button, Text, View} from '@tarojs/components'
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import Taro, {
   useDidHide,
   useDidShow,
@@ -12,6 +12,10 @@ import Taro, {
 import styles from './index.module.less'
 
 export default function Detail() {
+
+  // 为什么使用useRef, 因为useRef存的对象在整个组件的生命周期中都是保持同一个对象
+  const instance = useRef(Taro.getCurrentInstance())
+  console.log('router.params=>', instance.current.router!.params)
 
   useEffect(() => {
     console.log('detail useEffect')
