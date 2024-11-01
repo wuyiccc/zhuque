@@ -75,6 +75,31 @@ export default function Home() {
     })
   }
 
+  const setStorage = () => {
+
+    // Taro.setStorage({
+    //   key: 'info',
+    //   data: {
+    //     name: "wuyiccc",
+    //     id: 100
+    //   }
+    // })
+    Taro.setStorageSync('info', {name: 'wuyiccc', id: 1})
+  }
+
+  const getStorage = () => {
+
+    // Taro.getStorage({
+    //   key: 'info',
+    //   success: (res) => {
+    //     console.log(res)
+    //   }
+    // })
+    let data = Taro.getStorageSync('info')
+    console.log(data)
+  }
+
+
   return (
     <View className='home'>
       <View>1. 页面跳转(组件)</View>
@@ -109,6 +134,10 @@ export default function Home() {
 
       <View>9. request请求测试</View>
       <Button onClick={getHomeData}>请求request</Button>
+
+      <View>10. 数据存储</View>
+      <Button onClick={setStorage}>存储数据</Button>
+      <Button onClick={getStorage}>获取数据</Button>
     </View>
   )
 }
