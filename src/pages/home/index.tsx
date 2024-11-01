@@ -2,6 +2,8 @@ import {Button, Navigator, View} from '@tarojs/components'
 import PageConstants from "@/infrastructure/constants/PageConstants";
 import Taro, {useLoad, useUnload} from '@tarojs/taro'
 import './index.less'
+import UserApi from "@/infrastructure/api/UserApi";
+import UserLoginBO from "@/infrastructure/pojo/UserLoginBO";
 
 export default function Home() {
 
@@ -64,19 +66,12 @@ export default function Home() {
 
 
   const getHomeData = () => {
-    Taro.request({
-      url: 'http://localhost:9000/user/login',
-      method: 'POST',
-      data: {
-        username: 'admin',
-        password: '123'
-      },
-      success(res) {
-        console.log(res)
-      },
-      fail(err) {
-        console.log(err)
-      }
+
+    let userLoginBO = new UserLoginBO()
+    userLoginBO.username = 'admin'
+    userLoginBO.password = '123'
+    UserApi.login(userLoginBO).then((res) => {
+      console.log(res)
     })
   }
 
