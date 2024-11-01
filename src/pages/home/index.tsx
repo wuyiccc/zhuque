@@ -63,6 +63,23 @@ export default function Home() {
   }
 
 
+  const getHomeData = () => {
+    Taro.request({
+      url: 'http://localhost:9000/user/login',
+      method: 'POST',
+      data: {
+        username: 'admin',
+        password: '123'
+      },
+      success(res) {
+        console.log(res)
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
+  }
+
   return (
     <View className='home'>
       <View>1. 页面跳转(组件)</View>
@@ -94,6 +111,9 @@ export default function Home() {
 
       <View>8. 页面数据传参(逆向)</View>
       <Button onClick={goToDetail05}>逆向页面数据传参(逆向)</Button>
+
+      <View>9. request请求测试</View>
+      <Button onClick={getHomeData}>请求request</Button>
     </View>
   )
 }
