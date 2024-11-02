@@ -6,13 +6,8 @@ class App extends Component<any, any> {
 
 
   componentDidMount() {
-    console.log("app componentDidMount");
   }
 
-  // 定义全局数据
-  taroGlobalData = {
-    name: "wuyiccc"
-  }
 
   render() {
 
