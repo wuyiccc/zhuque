@@ -2,17 +2,7 @@ import StrConstants from "@/infrastructure/constants/StrConstants";
 
 export default class PageConstants {
 
-  public static readonly PAGE_HOME = 'pages/home/index';
-
-  public static readonly PAGE_CART = 'pages/cart/index';
-
-  public static readonly PAGE_CATEGORY = 'pages/category/index';
-
-
-  public static readonly PAGE_PROFILE = 'pages/profile/index';
-
-  public static readonly PAGE_DETAIL = 'pages/detail/index';
-
+  public static readonly PAGE_INDEX = 'pages/index/index';
 
 
   /**
