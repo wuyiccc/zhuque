@@ -21,7 +21,7 @@ const ZQButton = memo(function (props: Props) {
     props.onBtnClick && props.onBtnClick();
   };
 
-  return <View className={cn} onClick={handleBtnClick}>{children}</View>;
+  return <View className={cn} onClick={handleBtnClick}>{children}-weapp</View>;
 });
 
 export default ZQButton;
