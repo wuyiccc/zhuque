@@ -1,5 +1,5 @@
-import {Component} from 'react'
-import './app.less'
+import {Component} from 'react';
+import './app.less';
 
 
 class App extends Component<any, any> {
@@ -11,9 +11,9 @@ class App extends Component<any, any> {
 
   render() {
 
-    return this.props.children
+    return this.props.children;
   }
 
 }
 
-export default App
+export default App;

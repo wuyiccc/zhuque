@@ -6,7 +6,8 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "jsx-quotes": "off",
-    "import/no-commonjs": "off"
+    "import/no-commonjs": "off",
+    "semi": [2, "always"]
   },
   // 给eslint定义的一些全局变量
   "globals": {
