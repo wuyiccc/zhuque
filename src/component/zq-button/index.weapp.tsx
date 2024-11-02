@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import {View} from "@tarojs/components";
+import {View} from '@tarojs/components';
 import React, {memo} from "react";
 import styles from './index.module.less';
 

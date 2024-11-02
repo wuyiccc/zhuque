@@ -1,4 +1,4 @@
-import PageConstants from "@/infrastructure/constants/PageConstants";
+import PageConstants from '@/infrastructure/constants/PageConstants';
 
 export default defineAppConfig({
   pages: PageConstants.getPageList(),

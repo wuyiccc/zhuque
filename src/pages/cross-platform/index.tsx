@@ -1,6 +1,7 @@
 import {View} from '@tarojs/components';
 import {useLoad} from '@tarojs/taro';
-import ZQButton from "@/component/zq-button";
+import ZQButton from '@/component/zq-button';
+import SetTitle from '@/infrastructure/utils/set-title';
 
 export default function CrossPlatform() {
 
@@ -39,6 +40,9 @@ export default function CrossPlatform() {
           </View>
         )
       }
+
+      <View>我是统一接口+多端的脚本</View>
+      <ZQButton type='blue' onBtnClick={() => SetTitle.setTitle()}>多端组件</ZQButton>
     </View>
   );
 }
