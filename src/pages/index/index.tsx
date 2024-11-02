@@ -1,8 +1,7 @@
-import ZQButton from "@/component/zq-button";
 import {View} from '@tarojs/components'
+import ZQButton from "@/component/zq-button";
 
 export default function Index() {
-
 
 
   const handleBtnClick = () => {
@@ -12,6 +11,7 @@ export default function Index() {
   return (
     <View className='index global-style'>
       <ZQButton type='primary' onBtnClick={handleBtnClick}>Test Button</ZQButton>
+
       <ZQButton type='default' onBtnClick={handleBtnClick}>Test Button</ZQButton>
     </View>
   )
