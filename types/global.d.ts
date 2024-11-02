@@ -26,4 +26,5 @@ declare namespace NodeJS {
   }
 }
 
+declare let wx: any;
 
