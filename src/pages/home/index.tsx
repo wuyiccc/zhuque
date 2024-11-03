@@ -6,12 +6,13 @@ import HomeApi from '@/infrastructure/api/HomeApi';
 import CommonConstants from '@/infrastructure/constants/CommonConstants';
 import HomeBanner from "@/pages/home/component/home-banner";
 import HomePopular from "@/pages/home/component/home-popular";
+import HomeRecommand from "@/pages/home/component/home-recommand";
 
 export default function () {
 
   const [bannerList, setBannerList] = useState<string[]>([]);
   const [populars, setPopulars] = useState<[]>([]);
-  const [recommend, setRecommend] = useState<[]>();
+  const [recommend, setRecommend] = useState<[]>([]);
 
 
   useDidShow(() => {
@@ -35,13 +36,12 @@ export default function () {
 
     setPopulars(recommendData.populars);
     setRecommend(recommendData.recommend);
-
-
   };
 
   return <View>
     <HomeSearch></HomeSearch>
     <HomeBanner banners={bannerList}></HomeBanner>
     <HomePopular populars={populars}></HomePopular>
+    <HomeRecommand recommend={recommend}></HomeRecommand>
   </View>;
 };
