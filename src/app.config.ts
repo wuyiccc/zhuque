@@ -6,10 +6,10 @@ export default defineAppConfig({
     // 下拉刷新时候的样式
     backgroundTextStyle: 'light',
     // 导航栏北京颜色
-    navigationBarBackgroundColor: '#ff454e',
+    navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'zhuque',
     // 导航栏文字颜色
-    navigationBarTextStyle: 'white',
+    navigationBarTextStyle: 'black',
   },
   // tabBar: {
   //   color: '#999',
