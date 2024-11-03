@@ -1,13 +1,12 @@
 export default class GoodsGetBO {
 
-  public type: number;
+  public current: number;
+
+  public size: number;
 
 
-  public page: number;
-
-
-  constructor(type: number, page: number) {
-    this.type = type;
-    this.page = page;
+  constructor(current: number, size: number) {
+    this.current = current;
+    this.size = size;
   }
 }

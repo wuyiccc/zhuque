@@ -1,5 +1,7 @@
 import BaseApi from '@/infrastructure/api/BaseApi';
 import GoodsGetBO from '@/infrastructure/pojo/bo/GoodsGetBO';
+import PageEntity from "@/infrastructure/pojo/entity/PageEntity";
+import ArticleSimpleEntity from "@/infrastructure/pojo/entity/ArticleSimpleEntity";
 
 export default class HomeApi {
 
@@ -16,8 +18,8 @@ export default class HomeApi {
     return await BaseApi.get(HomeApi.PREFIX_URL + '/recommend', null);
   }
 
-  public static async getGoodsList(goodsGetBO: GoodsGetBO): Promise<any> {
+  public static async getGoodsList(goodsGetBO: GoodsGetBO): Promise<PageEntity<ArticleSimpleEntity>> {
 
-    return await BaseApi.post(HomeApi.PREFIX_URL + '/getGoodsList', goodsGetBO);
+    return await BaseApi.post("/home" + '/getArticleList', goodsGetBO);
   }
 }
