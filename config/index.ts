@@ -92,6 +92,9 @@ export default defineConfig(async (merge, {}) => {
             namingPattern: 'module', // 转换模式，取值为 global/module
             generateScopedName: '[name]__[local]___[hash:base64:5]'
           }
+        },
+        devServer: {
+          hot: false
         }
       },
       webpackChain(chain) {
