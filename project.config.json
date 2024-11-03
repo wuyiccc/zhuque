@@ -1,5 +1,5 @@
 {
-    "miniprogramRoot": "dist/",
+    "miniprogramRoot": "dist/weapp/",
     "projectname": "zhuque",
     "description": "taro多端应用",
     "setting": {

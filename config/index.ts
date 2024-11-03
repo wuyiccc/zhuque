@@ -17,7 +17,7 @@ export default defineConfig(async (merge, {}) => {
       828: 1.81 / 2
     },
     sourceRoot: 'src',
-    outputRoot: 'dist',
+    outputRoot: `dist/${process.env.TARO_ENV}`,
     plugins: [],
     defineConstants: {
       VERSION: '\'1.0.0\''
