@@ -1,4 +1,4 @@
 export default class CommonConstants {
 
-  public static DEFAULT_URL = 'http://minio.local.wuyiccc.com:12031/vega/02ec136e2f454d4e95c14e8e34eae01c187bef50352ac65c33eb5915f7f2b21191138ae1.jpg';
+  public static DEFAULT_URL = 'https://ct-upimg.yx090.com/ju8hn6/shop/image/2024/10/29/D2PFm1D0gXCljCr0av0FSNKNU9c0qXoMdhCRUxqs.png';
 }

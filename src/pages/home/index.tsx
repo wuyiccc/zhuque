@@ -4,6 +4,7 @@ import HomeSearch from '@/pages/home/component/home-search';
 import {useState} from 'react';
 import HomeApi from '@/infrastructure/api/HomeApi';
 import CommonConstants from '@/infrastructure/constants/CommonConstants';
+import HomeBanner from "@/pages/home/component/home-banner";
 
 export default function () {
 
@@ -39,8 +40,9 @@ export default function () {
 
   return <View>
     <HomeSearch></HomeSearch>
-    {bannerList}
-    {JSON.stringify(populars)}
-    {JSON.stringify(recommend)}
+    <HomeBanner banners={bannerList}></HomeBanner>
+    {/*{bannerList}*/}
+    {/*{JSON.stringify(populars)}*/}
+    {/*{JSON.stringify(recommend)}*/}
   </View>;
 };
