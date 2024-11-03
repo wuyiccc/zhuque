@@ -1,4 +1,4 @@
-import StrConstants from "@/infrastructure/constants/StrConstants";
+import StrConstants from '@/infrastructure/constants/StrConstants';
 
 export default class PageConstants {
 

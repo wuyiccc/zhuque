@@ -1,5 +1,5 @@
 import {View} from '@tarojs/components';
-import ZQButton from "@/component/zq-button";
+import ZQButton from '@/component/zq-button';
 
 export default function Index() {
 
