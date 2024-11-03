@@ -1,15 +1,11 @@
-import { View, Text } from '@tarojs/components';
-import { useLoad } from '@tarojs/taro';
+import {View} from '@tarojs/components';
+import {memo} from 'react';
 
-export default function Cart() {
+const Category = memo(function () {
 
-  useLoad(() => {
-    console.log('Page loaded.');
-  });
+  return <View>
+    分类
+  </View>;
+});
 
-  return (
-    <View className='category'>
-      <Text>Hello world!</Text>
-    </View>
-  );
-}
+export default Category;
