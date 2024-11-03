@@ -4,6 +4,12 @@ export default class PageConstants {
 
   public static readonly PAGE_HOME = 'pages/home/index';
 
+  public static readonly PAGE_CATEGORY = 'pages/category/index';
+
+  public static readonly PAGE_CART = 'pages/cart/index';
+
+  public static readonly PAGE_MINE = 'pages/mine/index';
+
 
 
   /**
