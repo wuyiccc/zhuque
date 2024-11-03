@@ -20,7 +20,7 @@ export default defineConfig(async (merge, {}) => {
     outputRoot: 'dist',
     plugins: [],
     defineConstants: {
-      VERSION: "'1.0.0'"
+      VERSION: '\'1.0.0\''
     },
     alias: {
       // index.ts所在目录的上一个文件夹的src
