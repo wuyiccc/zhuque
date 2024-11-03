@@ -10,6 +10,7 @@ export default class PageConstants {
 
   public static readonly PAGE_MINE = 'pages/mine/index';
 
+  public static readonly PAGE_DETAIL = 'pages/detail/index';
 
 
   /**

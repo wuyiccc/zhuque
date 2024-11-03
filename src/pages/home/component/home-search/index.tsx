@@ -6,7 +6,6 @@ import styles from './index.module.less';
 
 const HomeSearch = memo(function () {
 
-
   return <View className={styles.container}>
 
     <View className={styles.leftSearchContainer}>

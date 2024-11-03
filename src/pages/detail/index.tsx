@@ -1,10 +1,10 @@
 import {View} from '@tarojs/components';
 
-const Category = function () {
+const Detail = function () {
 
   return <View>
-    分类
+    详情
   </View>;
 };
 
-export default Category;
+export default Detail;
