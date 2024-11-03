@@ -1,6 +1,6 @@
+import CommonConstants from '@/infrastructure/constants/CommonConstants';
 import {Image, View} from '@tarojs/components';
 import styles from './index.module.less';
-import CommonConstants from "@/infrastructure/constants/CommonConstants";
 
 type Props = {
 
@@ -9,6 +9,7 @@ type Props = {
 
 export default function (props: Props) {
 
+  console.log(props);
 
   return <View className={styles.container}>
     <View className={styles.topContainer}>
