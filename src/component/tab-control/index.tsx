@@ -1,21 +1,26 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import classNames from 'classnames';
 import {View} from '@tarojs/components';
 import styles from './index.module.less';
 
 type Props = {
   titles: string[];
-  onTabClick?: Function
+  onTabClick?: Function,
 }
 
 export default function (props: Props) {
 
-  const [currentIndex, setcCurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, []);
 
 
   const onTabClick = (index: number) => {
 
-    setcCurrentIndex(index);
+    setCurrentIndex(index);
 
     props.onTabClick && props.onTabClick(index);
   };

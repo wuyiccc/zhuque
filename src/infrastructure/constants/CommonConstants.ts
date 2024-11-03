@@ -8,4 +8,6 @@ export default class CommonConstants {
 
   public static DEFAULT_RIGHT_IMG = 'http://minio.local.wuyiccc.com:12031/vega/278ab86c0d3a46db9612ea166b97bd4e5cb19a558a246.jpg';
   public static DEFAULT_RIGHT_IMG2 = 'http://minio.local.wuyiccc.com:12031/vega/ead107992ef24409bc06b2a95c0701c23f690c7b02087bf475480490e5d3572c10dfcf1b.jpg';
+
+  public static TABLE_TYPES = ['specific', 'single'];
 }

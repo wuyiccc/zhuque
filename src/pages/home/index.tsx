@@ -8,16 +8,19 @@ import HomeBanner from '@/pages/home/component/home-banner';
 import HomePopular from '@/pages/home/component/home-popular';
 import HomeRecommand from '@/pages/home/component/home-recommand';
 import TabControl from '@/component/tab-control';
+import GoodsGetBO from '@/infrastructure/pojo/bo/GoodsGetBO';
 
 export default function () {
 
   const [bannerList, setBannerList] = useState<string[]>([]);
   const [populars, setPopulars] = useState<[]>([]);
+  const [goodsList, setGoodsList] = useState<any>();
 
 
   useDidShow(() => {
 
     loadHomeData();
+    initGoodsContent();
   });
 
 
@@ -35,9 +38,45 @@ export default function () {
     setPopulars(recommendData.populars);
   };
 
-  const onTabClick = (index) => {
 
-    console.log(index);
+
+  const loadGoods = async (goodsGetBO: GoodsGetBO) => {
+    const data = await HomeApi.getGoodsList(goodsGetBO);
+    return {
+      data: data.goods,
+      type: goodsGetBO.type,
+      page: goodsGetBO.page
+    };
+  };
+
+
+  const initGoodsContent = async () => {
+
+    const goodsListOrigin = {};
+
+    CommonConstants.TABLE_TYPES.forEach((item) => {
+      goodsListOrigin[item] = {page: 0, list: []};
+    });
+
+    const newGoodsList = goodsListOrigin;
+    // 初始化数据
+
+    for (let i = 0; i < CommonConstants.TABLE_TYPES.length; i++) {
+      let item = CommonConstants.TABLE_TYPES[i];
+      const goods1BO = new GoodsGetBO(i, 1);
+      const data1 = await loadGoods(goods1BO);
+      newGoodsList[item] = {
+        page: i,
+        list: [...newGoodsList[item].list, data1.data]
+      };
+    }
+    setGoodsList(newGoodsList);
+  };
+
+
+  const onTabClick = async (index) => {
+
+
   };
 
   return <View>
@@ -46,5 +85,9 @@ export default function () {
     <HomePopular populars={populars}></HomePopular>
     <HomeRecommand></HomeRecommand>
     <TabControl titles={['精选专场', '精选单品']} onTabClick={onTabClick}></TabControl>
+
+    {
+      JSON.stringify(goodsList)
+    }
   </View>;
 };
