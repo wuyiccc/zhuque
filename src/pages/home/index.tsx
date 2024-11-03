@@ -1,5 +1,5 @@
 import {Image, Text, View} from '@tarojs/components';
-import {useDidShow, useReachBottom} from '@tarojs/taro';
+import Taro, {useDidShow, useReachBottom} from '@tarojs/taro';
 import HomeRecommend from '@/pages/home/component/home-recommend';
 import HomeSearch from '@/pages/home/component/home-search';
 import {useState} from 'react';
@@ -86,6 +86,17 @@ export default function () {
     setPage(() => bo.current + 1);
   };
 
+  const handleClick = (item: ArticleSimpleEntity) => {
+
+    Taro.navigateTo({
+      // 必须指定字符串, 不能用PageConstants.xxx
+      url: '/pages/detail/index' + '?link=' + item.image,
+      success: () => {
+
+      }
+    });
+  };
+
   const renderGridView = () => {
 
     if (articleList && articleList.length > 0) {
@@ -98,7 +109,7 @@ export default function () {
           {rows.map((row, index) => (
             <View key={index} className={styles.row}>
               {row.map((item, idx) => (
-                <View key={idx} className={styles.item}>
+                <View key={idx} className={styles.item} onClick={() => handleClick(item)}>
                   <View className={styles.itemImageContainer}>
                     <Image className={styles.itemImage} src={item.image!}></Image>
                   </View>

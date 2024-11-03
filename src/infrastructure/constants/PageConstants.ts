@@ -1,5 +1,3 @@
-import StrConstants from '@/infrastructure/constants/StrConstants';
-
 export default class PageConstants {
 
   public static readonly PAGE_HOME = 'pages/home/index';
@@ -10,7 +8,7 @@ export default class PageConstants {
 
   public static readonly PAGE_MINE = 'pages/mine/index';
 
-  public static readonly PAGE_DETAIL = 'pages/detail/index';
+  public static readonly PAGE_DETAIL: string = 'pages/detail/index';
 
 
   /**
@@ -21,9 +19,5 @@ export default class PageConstants {
     return Object.values(PageConstants);
   }
 
-  public static getNavigateUrl(url : string): string {
-
-    return StrConstants.SLASH + url;
-  }
 
 }
