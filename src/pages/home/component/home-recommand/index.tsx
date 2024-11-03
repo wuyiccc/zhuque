@@ -2,14 +2,13 @@ import CommonConstants from '@/infrastructure/constants/CommonConstants';
 import {Image, View} from '@tarojs/components';
 import styles from './index.module.less';
 
-type Props = {
+// type Props = {
 
-  recommend: []
-}
+  // recommend: []
+// }
 
-export default function (props: Props) {
+export default function () {
 
-  console.log(props);
 
   return <View className={styles.container}>
     <View className={styles.topContainer}>
